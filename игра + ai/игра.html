@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Игра: Реши квадратное уравнение</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Реши квадратное уравнение!</h1>
+		<p> ответ округли до десятых</p>
+        <div class="game-area">
+            <div id="equation" class="equation">$ax^2 + bx + c = 0$</div>
+            <div class="inputs">
+                <input type="number" id="x1" placeholder="Первый корень">
+                <input type="number" id="x2" placeholder="Второй корень">
+            </div>
+            <div class="buttons">
+                <button onclick="checkAnswer()">Проверить</button>
+                <button onclick="getAIHelp()" class="ai-button">Помощь AI</button>
+            </div>
+            <div id="feedback" class="feedback"></div>
+            <div id="score" class="score">Счёт: 0</div>
+        </div>
+
+        <div id="ai-panel" class="ai-panel">
+            <h3>AI‑помощник по математике</h3>
+            <div id="ai-chat" class="ai-chat">
+                <div class="ai-message">Привет! Я помогу решить квадратное уравнение. Нажми «Помощь AI», чтобы получить пошаговое решение.</div>
+            </div>
+            <button onclick="closeAI()" class="close-button">Закрыть</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

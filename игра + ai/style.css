@@ -1,0 +1,134 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 15px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 1.4rem;
+}
+p {
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-size: 1.4rem;
+}
+.game-area {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.equation {
+    font-size: 22px;
+    margin: 15px 0;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4CAF50;
+    word-break: break-all; /* чтоб длинное уравнение не ломало верстку */
+}
+
+.inputs {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+input {
+    padding: 12px;
+    font-size: 16px;
+    width: 140px;
+    text-align: center;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+}
+
+/* на совсем узких экранах делаем поля друг под другом */
+@media (max-width: 400px) {
+    .inputs { flex-direction: column; align-items: center; }
+    input { width: 100%; max-width: 240px; }
+}
+
+input:focus { outline: none; border-color: #4CAF50; }
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+button {
+    padding: 12px 18px;
+    font-size: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 130px;
+}
+
+.ai-button { background: #FF9800; color: white; }
+.close-button { background: #f44336; color: white; }
+
+button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+.feedback {
+    margin: 15px 0;
+    min-height: 36px;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.score {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* AI панель */
+.ai-panel {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin-top: 20px;
+    display: none;
+}
+
+.ai-chat {
+    height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 12px 0;
+}
+
+.user-message, .ai-message {
+    padding: 10px 14px;
+    margin: 5px 0;
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.user-message { background: #E3F2FD; align-self: flex-end; margin-left: auto; }
+.ai-message { background: #F3E5F5; align-self: flex-start; }
